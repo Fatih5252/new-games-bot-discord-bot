@@ -1,0 +1,14 @@
+discord.js
+nodemon
+discord-gamecord
+dotenv
+@discordjs/builders
+mongoose
+axios
+ms
+discord-giveaways
+superagent
+emoji-aware
+captcha-canvas
+@discordjs/rest
+uuid
