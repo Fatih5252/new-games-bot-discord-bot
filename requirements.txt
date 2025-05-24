@@ -7,8 +7,6 @@ mongoose
 axios
 ms
 discord-giveaways
-superagent
-emoji-aware
 captcha-canvas
 @discordjs/rest
 uuid
