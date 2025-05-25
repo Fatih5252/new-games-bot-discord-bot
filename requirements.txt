@@ -10,3 +10,4 @@ discord-giveaways
 captcha-canvas
 @discordjs/rest
 uuid
+discord-rpc

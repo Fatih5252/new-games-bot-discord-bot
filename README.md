@@ -14,6 +14,7 @@ change src/index.js line 41 Private discord server id<br>
 change src/index.js line 88 discord Category id<br>
 change src/index.js line 137 Private discord server id<br>
 change src/events/bugreport.js line 17 change discord category id<br>
+Delete rpc.js<br>
 # IF YOU DONT DO THIS, YOUR BOT WILL NOT WORK.<br>
 <br>
 
