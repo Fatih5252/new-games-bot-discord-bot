@@ -7,6 +7,7 @@ The `https://github.com/fatih5252/games-bot-discord-bot` one is outdateted becau
 Use the command npm i to install all of the packages (or install them manually).
 
 ## THINGS YOU HAVE TO DO<br>
+change src/functions/handelCommands.js line ? Discord client id<br>
 change src/commands/other/deleteschema.js line 24 owner/bot developer id's<br>
 change src/commands/moderation/blacklist.js line 24 owner bot developer id's<br>
 change src/commands/moderation/verify.js line 14 owner/bot developer id's<br>
