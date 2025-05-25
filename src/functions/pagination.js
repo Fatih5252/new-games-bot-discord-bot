@@ -1,4 +1,4 @@
-const { ActionRowBuilder, ButtonBuilder, ButtonStyle, ComponentType, EmbedBuilder } = require('discord.js')
+const { ActionRowBuilder, ButtonBuilder, ButtonStyle, ComponentType, EmbedBuilder, MessageFlags } = require('discord.js')
 
 module.exports = async (interaction, pages, time = 30 * 1000) => {
 
@@ -50,7 +50,7 @@ module.exports = async (interaction, pages, time = 30 * 1000) => {
         });
 
         collector.on('collect', async i => {
-            if (i.user.id !== interaction.user.id) return await i.reply({ content: `Only **${interaction.user.username}** can use these buttons!`, ephemeral: true });
+            if (i.user.id !== interaction.user.id) return await i.reply({ content: `Only **${interaction.user.username}** can use these buttons!`, flags: MessageFlags.Ephemeral });
 
             await i.deferUpdate();
 

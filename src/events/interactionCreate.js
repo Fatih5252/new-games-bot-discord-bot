@@ -1,4 +1,4 @@
-const { Interaction } = require("discord.js");
+const { Interaction, MessageFlags } = require("discord.js");
 
 module.exports = {
     name: 'interactionCreate',
@@ -11,7 +11,7 @@ module.exports = {
 
                 var member = await client.users.fetch(stringId);
                 await member.send(`This message was initialized by the developers indicating that the bug you reported has been solved.`).catch(err => {});
-                await interaction.reply({ content: `I have notified the member that their report is now solved`, ephemeral: true });
+                await interaction.reply({ content: `I have notified the member that their report is now solved`, flags: MessageFlags.Ephemeral });
                 await interaction.message.delete().catch(err => {}); 
             }
         }
@@ -29,7 +29,7 @@ module.exports = {
             console.log(error);
             await interaction.reply({
                 content: 'There was an error while executing this command!', 
-                ephemeral: true
+                flags: MessageFlags.Ephemeral
             });
         }
         

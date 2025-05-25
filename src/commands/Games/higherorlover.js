@@ -171,7 +171,7 @@ const {
         if (opponent.id === interaction.user.id)
           return interaction.reply({
             content: "You cannot challenge yourself",
-            ephemeral: true,
+            flags: MessageFlags.Ephemeral,
           });
         const acceptEmbed = new EmbedBuilder()
           .setColor("#5865F2")
@@ -203,7 +203,7 @@ const {
           if (i.user.id !== opponent.id)
             return i.reply({
               content: "These buttons are not for you",
-              ephemeral: true,
+              flags: MessageFlags.Ephemeral,
             });
           await acceptCollector.stop(i.customId);
         });

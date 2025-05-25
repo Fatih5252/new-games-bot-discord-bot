@@ -1,4 +1,4 @@
-const { SlashCommandBuilder, EmbedBuilder } = require('discord.js')
+const { SlashCommandBuilder, EmbedBuilder, MessageFlags } = require('discord.js')
 const { execute } = require('./points')
 const pointSchema = require('../../schemas/pointschema')
 
@@ -25,10 +25,10 @@ if(interaction.user.id === target.id ) interaction.reply({ content: `${interacti
 if(interaction.user.id === target.id ) return;
 
                 if(!UserD) {
-                    interaction.reply({ content: `Sorry ${interaction.user} you must have an account make one using </points:1092344289444507769> comamnd`, ephermal: true})
+                    interaction.reply({ content: `Sorry ${interaction.user} you must have an account make one using </points:1092344289444507769> comamnd`, flags: MessageFlags.Ephemeral})
                 } 
                 if(!Data) {
-                    interaction.reply({ content: `Sorry but ${target} doesnt have an account please ask him to make an account!  `, ephermal: true })
+                    interaction.reply({ content: `Sorry but ${target} doesnt have an account please ask him to make an account!`, flags: MessageFlags.Ephemeral })
                 }
                 
 

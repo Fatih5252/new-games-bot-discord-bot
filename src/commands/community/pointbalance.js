@@ -1,4 +1,4 @@
-const { SlashCommandBuilder, EmbedBuilder } = require('discord.js')
+const { SlashCommandBuilder, EmbedBuilder, MessageFlags } = require('discord.js')
 const pointSchema = require('../../schemas/pointschema')
 
 module.exports = {
@@ -10,7 +10,7 @@ module.exports = {
         let Data = await pointSchema.findOne({ User: interaction.user.id })
 
         if(!Data) {
-            interaction.reply({ content: `Sorry ${interaction.user} but you dont have an account!`, ephermal: true})
+            interaction.reply({ content: `Sorry ${interaction.user} but you dont have an account!`, flags: MessageFlags.Ephemeral})
         }
         if(Data) {
             const data = new EmbedBuilder()

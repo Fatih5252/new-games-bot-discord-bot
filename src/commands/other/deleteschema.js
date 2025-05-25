@@ -1,4 +1,4 @@
-const { SlashCommandBuilder, EmbedBuilder, PermissionFlagsBits, PermissionsBitField } = require("discord.js");
+const { SlashCommandBuilder, EmbedBuilder, PermissionFlagsBits, PermissionsBitField, MessageFlags } = require("discord.js");
 const fs = require('fs');
 const path = require('path');
 
@@ -21,7 +21,7 @@ module.exports = {
         const guild = interaction.guild.id;
         const schemaName = interaction.options.getString("schema");
 
-        if (interaction.user.id !== `owner/developerid's`) return await interaction.reply({ content: 'only developers can run this command!', ephemeral: true })
+        if (interaction.user.id !== `all of the bot developer id's`) return await interaction.reply({ content: 'only developers can run this command!', flags: MessageFlags.Ephemeral })
     
         try {
             const schema = require(`../../schemas/${schemaName}`);
@@ -41,13 +41,13 @@ module.exports = {
                 .setThumbnail(client.user.avatarURL())
                 .setTimestamp();
 
-                interaction.reply({ embeds: [schemaEmbed], ephemeral: true });
+                interaction.reply({ embeds: [schemaEmbed], flags: MessageFlags.Ephemeral });
             } else {
-                interaction.reply({ content: `No data found for user ${user.tag} in the ${schemaName} schema.`, ephemeral: true });
+                interaction.reply({ content: `No data found for user ${user.tag} in the ${schemaName} schema.`, flags: MessageFlags.Ephemeral });
             }
         } catch (error) {
             console.log("[SCHEMAS_WIPE] Error wiping user data:", error);
-            interaction.reply({ content: "An error occurred while wiping user data.", ephemeral: true });
+            interaction.reply({ content: "An error occurred while wiping user data.", flags: MessageFlags.Ephemeral });
         }
     },
 };

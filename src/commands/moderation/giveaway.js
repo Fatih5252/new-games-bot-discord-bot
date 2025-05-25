@@ -1,5 +1,5 @@
-const { PermissionsBitField, SlashCommandBuilder } = require('discord.js');
-const ms = require('ms')
+const { PermissionsBitField, SlashCommandBuilder, MessageFlags } = require('discord.js');
+const ms = require('ms');
 
 module.exports = {
     data: new SlashCommandBuilder()
@@ -11,13 +11,13 @@ module.exports = {
     .addSubcommand(command => command.setName('reroll').setDescription('reroll the giveaway').addStringOption(option => option.setName('message-id').setDescription('the id of the giveaway message').setRequired(true))),
     async execute (interaction, client) {
 
-        if (!interaction.member.permissions.has(PermissionsBitField.Flags.ManageChannels)) return await interaction.reply({ content: `you need the \`ManageChannels\` permission to run this command`, ephemeral: true });
+        if (!interaction.member.permissions.has(PermissionsBitField.Flags.ManageChannels)) return await interaction.reply({ content: `you need the \`ManageChannels\` permission to run this command`, flags: MessageFlags.Ephemeral });
         const sub = interaction.options.getSubcommand();
 
         switch (sub) {
             case 'start':
 
-            await interaction.reply({ content: `Starting your giveaway...`, ephemeral: true });
+            await interaction.reply({ content: `Starting your giveaway...`, flags: MessageFlags.Ephemeral });
 
             const duration = ms(interaction.options.getString('duration') || "");
             const winnerCount = interaction.options.getInteger('winners');
@@ -82,12 +82,12 @@ module.exports = {
                     }
                 });
 
-                interaction.editReply({ content: `Your giveaway has been started! check ${showChannel} for your giveaway`, ephemeral: true });
+                interaction.editReply({ content: `Your giveaway has been started! check ${showChannel} for your giveaway`, flags: MessageFlags.Ephemeral });
 
                 break;
                 case 'edit':
 
-                await interaction.reply({ content: `Editing your giveaway...`, ephemeral: true });
+                await interaction.reply({ content: `Editing your giveaway...`, flags: MessageFlags.Ephemeral });
 
                 const newprize = interaction.options.getString('prize');
                 const newduration = interaction.options.getString('time');
@@ -99,38 +99,38 @@ module.exports = {
                     newWinnerCount: newwinners,
                     newPrize: newprize,
                 }).then(() => {
-                    interaction.editReply({ content: `Your giveaway has been edited!`, ephemeral: true });
+                    interaction.editReply({ content: `Your giveaway has been edited!`, flags: MessageFlags.Ephemeral });
                 }).catch(err => {
-                    interaction.editReply({ content: `There was an error while editing your giveaway!\n\nError: \`${err}\``, ephemeral: true });
+                    interaction.editReply({ content: `There was an error while editing your giveaway!\n\nError: \`${err}\``, flags: MessageFlags.Ephemeral });
                 });
 
                 break;
                 case 'end':
 
-                await interaction.reply({ content: `Ending your giveaway...`, ephemeral: true });
+                await interaction.reply({ content: `Ending your giveaway...`, flags: MessageFlags.Ephemeral });
 
                 const messageId1 = interaction.options.getString('message-id');
 
                 client.giveawayManager.end(messageId1).then(() => {
-                    interaction.editReply({ content: `Your giveaway has been ended`, ephemeral: true });
+                    interaction.editReply({ content: `Your giveaway has been ended`, flags: MessageFlags.Ephemeral });
                 }).catch(err => {
-                    interaction.editReply({ content: `An error occured while ending the giveaway!\n\nError: \`${err}\``, ephemeral: true });
+                    interaction.editReply({ content: `An error occured while ending the giveaway!\n\nError: \`${err}\``, flags: MessageFlags.Ephemeral });
                 });
 
                 break;
                 case 'reroll':
 
-                await interaction.reply({ content: `Rerolling your giveaway...`, ephemeral: true });
+                await interaction.reply({ content: `Rerolling your giveaway...`, flags: MessageFlags.Ephemeral });
 
                 const query = interaction.options.getString('message-id');
                 const giveaway = client.giveawayManager.giveaways.find((g) => g.guildId === interaction.guildId && g.prize === query) || client.giveawayManager.giveaways.find((g) => g.guildId === interaction.guildId && g.messageId === query)
 
-                if (!giveaway) return await interaction.reply({ content: `I could not find a giveaway with the message ID you provided`, ephemral: true });
+                if (!giveaway) return await interaction.reply({ content: `I could not find a giveaway with the message ID you provided`, flags: MessageFlags.Ephemeral });
                 const messageId2 = interaction.options.getString('message-id');
                 client.giveawayManager.reroll(messageId2).then(() => {
-                    interaction.editReply({ content: `Your giveaway has been rerolled`, ephemeral: true });
+                    interaction.editReply({ content: `Your giveaway has been rerolled`, flags: MessageFlags.Ephemeral });
                 }).catch(err => {
-                    interaction.editReply({ content: `There was an error while rerolling your gieaway\n\nError: \`${err}\``, ephemral: true });
+                    interaction.editReply({ content: `There was an error while rerolling your gieaway\n\nError: \`${err}\``, flags: MessageFlags.Ephemeral });
                 })
         }
     }

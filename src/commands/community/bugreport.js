@@ -1,4 +1,4 @@
-const { SlashCommandBuilder, EmbedBuilder, ModalBuilder, TextInputBuilder, TextInputStyle, ActionRowBuilder } = require('discord.js');
+const { SlashCommandBuilder, EmbedBuilder, ModalBuilder, TextInputBuilder, TextInputStyle, ActionRowBuilder, MessageFlags } = require('discord.js');
 
 module.exports = {
     data: new SlashCommandBuilder()
@@ -6,7 +6,7 @@ module.exports = {
     .setDescription('Report a bug to the developers'),
     async execute (interaction) {
 
-        if (!interaction.guild) return await interaction.reply({ content: `Please report a bug within the server`, ephemeral: true })
+        if (!interaction.guild) return await interaction.reply({ content: `Please report a bug within the server`, flags: MessageFlags.Ephemeral })
 
         const modal = new ModalBuilder()
         .setTitle(`Bug & Command Abuse Reporting`)

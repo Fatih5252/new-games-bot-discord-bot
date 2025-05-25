@@ -1,4 +1,4 @@
-const { EmbedBuilder, Events, ActionRowBuilder, ButtonBuilder, ButtonStyle } = require('discord.js');
+const { EmbedBuilder, Events, ActionRowBuilder, ButtonBuilder, ButtonStyle, MessageFlags } = require('discord.js');
 
 module.exports = {
     name: Events.InteractionCreate,
@@ -35,7 +35,7 @@ module.exports = {
             );
 
             await channel.send({ embeds: [embed], components: [button] }).catch(err => {})
-            await interaction.reply({ content: `Your report has been recorded. Our developers will look into this issue, and reach out with any further questions.`, ephemeral: true });
+            await interaction.reply({ content: `Your report has been recorded. Our developers will look into this issue, and reach out with any further questions.`, flags: MessageFlags.Ephemeral });
         }
     }
 }

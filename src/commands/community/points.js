@@ -1,4 +1,4 @@
-const { SlashCommandBuilder } = require("discord.js")
+const { SlashCommandBuilder, MessageFlags } = require("discord.js")
 const pointSchema = require('../../schemas/pointschema')
 
 
@@ -33,13 +33,13 @@ async execute(interaction, client) {
           
  await Data.save()
  
-interaction.reply({ content: "You set up the point system for yourself!", ephemeral: true})
+interaction.reply({ content: "You set up the point system for yourself!", flags: MessageFlags.Ephemeral})
           
         }
         break;
         
       case "delete": {
-        if (!Data) return interaction.reply({ content: "Please create an account for yourself first :)", ephemeral: true})
+        if (!Data) return interaction.reply({ content: "Please create an account for yourself first :)", flags: MessageFlags.Ephemeral})
 
         await Data.delete()
         

@@ -1,4 +1,4 @@
-const { SlashCommandBuilder, ButtonStyle, ActionRowBuilder, ButtonBuilder } = require("discord.js");
+const { SlashCommandBuilder, ButtonStyle, ActionRowBuilder, ButtonBuilder, MessageFlags } = require("discord.js");
 
 module.exports = {
     data: new SlashCommandBuilder()
@@ -18,7 +18,7 @@ module.exports = {
         await interaction.reply({
             content: `You clicked ${number} times`,
             components: [row],
-            fetchReply: true,
+            withResponse: true,
         });
 
         const collector = interaction.channel.createMessageComponentCollector({
@@ -35,7 +35,7 @@ module.exports = {
             } else {
                 await i.reply({
                     content: `Only <@${interaction.user.id}> can use this button!`,
-                    ephemeral: true,
+                    flags: MessageFlags.Ephemeral,
                 });
             }
         });
