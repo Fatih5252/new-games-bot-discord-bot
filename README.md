@@ -3,10 +3,10 @@ This is the new Open source code for the Games Bot.<br>
 The `https://github.com/fatih5252/games-bot-discord-bot` one is outdateted because of that, this is the new repository.<br>
 [here you can invite the bot](https://discord.com/oauth2/authorize?client_id=1217541066434154627)<br>
 
-## Building<br>
+# Building<br>
 Use the command npm i to install all of the packages (or install them manually).
 
-## THINGS YOU HAVE TO DO<br>
+# THINGS YOU HAVE TO DO<br>
 change src/functions/handelCommands.js line 6 Discord client id<br>
 change src/commands/other/deleteschema.js line 24 owner/bot developer id's<br>
 change src/commands/moderation/blacklist.js line 24 owner bot developer id's<br>
@@ -16,11 +16,11 @@ change src/index.js line 88 discord Category id<br>
 change src/index.js line 137 Private discord server id<br>
 change src/events/bugreport.js line 17 change discord category id<br>
 Delete rpc.js<br>
-# IF YOU DONT DO THIS, YOUR BOT WILL NOT WORK.<br>
+## IF YOU DONT DO THIS, YOUR BOT WILL NOT WORK.<br>
 <br>
 
-## helpfull
-# How to Get Your MongoDB Atlas Connection URL
+# helpfull
+## How to Get Your MongoDB Atlas Connection URL
 
 To connect to a MongoDB Atlas database, you first need to obtain a special connection string, often called the **connection URL**. This URL contains all the necessary information your application needs to connect to the database, such as the username, password, cluster address, and database name. Let me explain the process of getting this connection string in a clear and complete way.
 
