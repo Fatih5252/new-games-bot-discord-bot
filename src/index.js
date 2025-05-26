@@ -33,7 +33,6 @@ client.giveawayManager = new GiveawaysManager(client, {
     },
 })
 
-// modmail
 const modSchema = require('./schemas/modmail');
 client.on(Events.MessageCreate, async message => {
 
@@ -164,10 +163,10 @@ client.on(Events.MessageCreate, async message => {
         })
     }
 })
-const capschema = require('./schemas/verify'); // your schema path
-const verifyusers = require('./schemas/verifyusers'); // your schema path
-const LeftUsers = require('./schemas/leftusers'); // your schema path
- 
+const capschema = require('./schemas/verify'); 
+const verifyusers = require('./schemas/verifyusers'); 
+const LeftUsers = require('./schemas/leftusers');
+
     client.on(Events.InteractionCreate, async interaction => {
         try {
 
@@ -307,20 +306,17 @@ const LeftUsers = require('./schemas/leftusers'); // your schema path
         
     });
 
-    // When a user leaves the server, save their data in a "LeftUsers" collection or with a flag.
 client.on('guildMemberRemove', async member => {
     try {
         const userId = member.user.id;
         
-        // Check if the user was verified
         const verifyusersdata = await verifyusers.findOne({ Guild: member.guild.id, User: userId });
         if (verifyusersdata) {
-            // Save their data in the LeftUsers collection or add a "left" flag
             await LeftUsers.create({
                 Guild: member.guild.id,
                 User: userId,
                 Key: verifyusersdata.Key,
-                Left: true, // You can add a "left" flag here
+                Left: true,
             });
         }
     } catch (err) {
@@ -332,11 +328,9 @@ client.on('guildMemberRemove', async member => {
         try {
         const userId = member.user.id;
 
-        // Check if the user has left data in the LeftUsers collection or has a "left" flag
         const leftUserData = await LeftUsers.findOne({ Guild: member.guild.id, User: userId });
 
         if (leftUserData) {
-            // Re-assign the verified role
             const verificationdata = await capschema.findOne({ Guild: member.guild.id });
             const verrole = await member.guild.roles.cache.get(verificationdata.Role);
             await member.roles.add(verrole);
