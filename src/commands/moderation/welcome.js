@@ -25,10 +25,10 @@ module.exports = {
         const welcomedata = await weschema.findOne({ Guild: interaction.guild.id });
 
         if (picture && !picture.startsWith('https://')) {
-                return await interaction.reply({ content: 'The picture url must start with https://!', flags: MessageFlags.Ephemeral });
-            }
+            return await interaction.reply({ content: 'The picture url must start with https://!', flags: MessageFlags.Ephemeral });
+        }
         if (picture && !(picture.endsWith('.png') || picture.endsWith('.jpg'))) {
-                return await interaction.reply({
+            return await interaction.reply({
                 content: 'the url link has to end with .png or .jpg.',
                 flags: MessageFlags.Ephemeral
         });
