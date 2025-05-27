@@ -9,6 +9,8 @@ module.exports = {
 
         if (!mongoURL) return;
 
+        await mongoose.set('strictQuery', false);
+
         await mongoose.connect(mongoURL || '', {
             useNewUrlParser: true,
             useUnifiedTopology: true
