@@ -1,6 +1,6 @@
 const { Client, GatewayIntentBits, EmbedBuilder, PermissionsBitField, Permissions, MessageManager, Embed, Collection, Events, Partials, ChannelType, ActionRowBuilder, ButtonBuilder, ButtonStyle, AttachmentBuilder, ModalBuilder, TextInputBuilder, TextInputStyle, User, MessageFlags } = require(`discord.js`);
 const fs = require('fs');
-const client = new Client({ intents: 3243775 }); 
+const client = new Client({ intents: 53608191 }); 
 const { CaptchaGenerator } = require('captcha-canvas');
 
 client.commands = new Collection();
