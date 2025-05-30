@@ -11,8 +11,6 @@ change src/functions/handelCommands.js line 6 Discord client id<br>
 change src/commands/other/deleteschema.js line 24 owner/bot developer id's<br>
 change src/commands/moderation/blacklist.js line 24 owner bot developer id's<br>
 change src/commands/moderation/verify.js line 14 owner/bot developer id's<br>
-change src/index.js line 41 Private discord server id<br>
-change src/index.js line 88 discord Category id<br>
 change src/index.js line 137 Private discord server id<br>
 change src/events/bugreport.js line 17 change discord category id<br>
 (optional) Delete rpc.js<br>
