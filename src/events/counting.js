@@ -9,7 +9,7 @@ module.exports = {
     async execute(message) {
         if (message.author.bot) return;
         if (!message.guild) return;
-
+        
         const countingData = await countingSchema.findOne({ Guild: message.guild.id });
         if (!countingData) return;
 
@@ -72,8 +72,8 @@ module.exports = {
                 .setTitle(`Current Number: ${countingData.Count}`)
                 .setColor('Green');
 
+            await message.react('✅');
             const reaction = await message.channel.send({ embeds: [response] });
-            await reaction.react('✅');
 
             if (countingData.Count === Math.floor(countingData.MaxCount / 4)) {
                 const quarterGoalEmbed = new EmbedBuilder()
@@ -106,7 +106,7 @@ module.exports = {
                     .setColor('Gold');
 
                 const congratsReact = await message.channel.send({ embeds: [congratulationsEmbed] });
-                await congratsReact.react('🏆');
+                await message.react('🏆');
 
                 countingData.Count = 0;
                 countingData.LastUserId = null;
@@ -120,6 +120,7 @@ module.exports = {
                 .setTimestamp()
                 .setFooter({ text: 'Wrong Number' });
 
+            await message.react('❌');
             await message.channel.send({ embeds: [wrongNumberEmbed] });
 
             countingData.Count = 0;
