@@ -1,4 +1,4 @@
-// webhook-server.js
+// webhook-server.js is used to work with github webhook stuff. if you dont use github (or if you use an discord webhook to send github messages) or dosn't care about this feature. read the README.md (section THING YOU HAVE TO DO) on how to get rid of this feature
 const express = require('express');
 const bodyParser = require('body-parser');
 const { EmbedBuilder } = require('discord.js');
