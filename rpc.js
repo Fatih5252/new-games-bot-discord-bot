@@ -10,7 +10,7 @@ async function activity() {
     if (!RPC) return;
 
     RPC.setActivity({
-        details: 'Oh Hi, This is the Games Bot discord Bot! it can play over 10+ Games!',
+        details: 'Oh Hi, This is the Games Bot discord Bot! it can play over 20+ Games!',
         state: 'Try /commands !',
         largeImageKey: 'https://www.puzzlemaster.ca/imagecache/products/alpha/640x640/012/012476.png',
         largeImageText: 'GAME BOT PFP',
