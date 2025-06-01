@@ -5,6 +5,7 @@ The `https://github.com/fatih5252/games-bot-discord-bot` one is outdateted becau
 
 # Building<br>
 Use the command npm i to install all of the packages (or install them manually).
+<br>
 
 # THINGS YOU HAVE TO DO<br>
 change `src/functions/handelCommands.js` line 6 Discord client id<br>
