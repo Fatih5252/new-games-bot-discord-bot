@@ -38,7 +38,7 @@ Once you have a user and network access set up, go back to your cluster and clic
 You must replace the placeholders with your own information. For example, if your username is `admin`, your password is `MyPassword123`, and your database name is `myapp`, then the final connection string would look like: `mongodb+srv://admin:MyPassword123@cluster0.mongodb.net/myapp?retryWrites=true&w=majority` 
 It is important to note that if your password includes special characters (like `@`, `/`, or `:`), you will need to **URL-encode** them. For instance, the `@` symbol becomes `%40`.
 
-Now that you have your connection URL, you can use it in your application. In many cases, especially in web development, developers use this string with a MongoDB library like **Mongoose** (in Node.js). You can also store this URL in an environment variable to keep your credentials safe and your code clean.
+Now that you have your connection URL, you can use it in your application. In many cases, especially in web development, developers use this string with a MongoDB library like **Mongoose** (in Node.js). You can also store this URL in an environment variable to keep your credentials safe and your code clean (store your Discord Bot Token in the `.env` folder).
 
 In summary, getting the MongoDB Atlas connection URL involves creating a cluster, setting up a user and IP access, and copying a customized connection string. This string is then used by your application to communicate securely with your MongoDB database hosted in the cloud.
 
