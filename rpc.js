@@ -29,7 +29,6 @@ async function activity() {
     })
 }
 
-
 RPC.on('ready', async (bot) => {
     console.log(`success!`)
     activity();
