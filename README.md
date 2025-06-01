@@ -14,7 +14,7 @@ change `src/commands/moderation/verify.js` line 14 owner/bot developer id's<br>
 change `src/index.js` line 137 Private discord server id<br>
 change `src/events/bugreport.js` line 17 change discord category id<br>
 change `src/webhook-server.js` line 7 channel id<br>
-If you want an github webhook server than there is an code on `src/webhook-server.js` but if you don't have to do with github or using discord webhooks then delete `src/webhook-server.js` and on `src/index.js` delete line 5 and line 14-16.<br>
+If you want an github webhook server. than there is an code on `src/webhook-server.js`. but if you don't use github or using discord webhooks then delete `src/webhook-server.js` and on `src/index.js` delete line 5 and line 14-16.<br>
 (optional) Delete `rpc.js`<br>
 
 ## IF YOU DONT DO THIS, YOUR BOT WILL NOT WORK.<br>
