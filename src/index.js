@@ -2,6 +2,7 @@ const { Client, GatewayIntentBits, EmbedBuilder, PermissionsBitField, Permission
 const fs = require('fs');
 const client = new Client({ intents: 53608191 }); 
 const { CaptchaGenerator } = require('captcha-canvas');
+const startWebhookServer = require('./webhook-server');
 
 client.commands = new Collection();
 
@@ -9,6 +10,9 @@ require('dotenv').config();
 
 client.on('ready', () => {
     client.user.setPresence({ activities: [{ name: '/commands' }], status: 'dnd' })
+})
+client.once('ready', () => {
+    startWebhookServer(client);
 })
 
 const functions = fs.readdirSync("./src/functions").filter(file => file.endsWith(".js"));
