@@ -9,6 +9,7 @@ Use the command npm i to install all of the packages (or install them manually).
 <br>
 
 # THINGS YOU HAVE TO DO<br>
+Modify `.env` you can find your MongoDB connection URL [here](https://github.com/Fatih5252/new-games-bot-discord-bot/blob/main/README.md#how-to-get-your-mongodb-atlas-connection-url) and your discord bot token [here](https://github.com/Fatih5252/new-games-bot-discord-bot/blob/main/README.md#discord)<br>
 change `src/functions/handelCommands.js` line 6 Discord client id<br>
 change `src/commands/other/deleteschema.js` line 24 owner/bot developer id's<br>
 change `src/commands/moderation/blacklist.js` line 24 owner bot developer id's<br>
