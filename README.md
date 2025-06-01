@@ -2,9 +2,10 @@
 This is the new Open source code for the Games Bot.<br>
 The `https://github.com/fatih5252/games-bot-discord-bot` one is outdateted because of that, this is the new repository.<br>
 [here you can invite the bot](https://discord.com/oauth2/authorize?client_id=1217541066434154627)<br>
+<br>
 
 # Building<br>
-Use the command npm i to install all of the packages (or install them manually).
+Use the command npm i to install all of the packages (or install them manually).<br>
 <br>
 
 # THINGS YOU HAVE TO DO<br>
