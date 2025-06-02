@@ -38,7 +38,7 @@ function startWebhookServer(bot) {
   });
 
   app.listen(PORT, () => {
-    console.log(`✅ Webhook-Server läuft auf Port ${PORT}`);
+    console.log(`✅ Webhook-Server works on port ${PORT}`);
   });
 }
 
