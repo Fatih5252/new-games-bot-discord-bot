@@ -9,16 +9,16 @@ Use the command npm i to install all of the packages (or install them manually).
 <br>
 
 # THINGS YOU HAVE TO DO<br>
-Modify `.env` you can find both tutorials on how to find your MongoDB connection URL [here](https://github.com/Fatih5252/new-games-bot-discord-bot/blob/main/README.md#how-to-get-your-mongodb-atlas-connection-url) and how to find your discord bot token [here](https://github.com/Fatih5252/new-games-bot-discord-bot/blob/main/README.md#discord)<br>
-change `src/functions/handelCommands.js` line 6 Discord client id<br>
-change `src/commands/other/deleteschema.js` line 24 owner/bot developer id's<br>
-change `src/commands/moderation/blacklist.js` line 24 owner bot developer id's<br>
-change `src/commands/moderation/verify.js` line 14 owner/bot developer id's<br>
-change `src/index.js` line 137 Private discord server id<br>
-change `src/events/bugreport.js` line 17 change discord category id<br>
-change `src/webhook-server.js` line 7 channel id<br>
-If you want an github webhook server. than there is an code on `src/webhook-server.js`. but if you don't use github or using discord webhooks then delete `src/webhook-server.js` and on `src/index.js` delete line 5 and line 14-16.<br>
-(optional) Delete `rpc.js`<br>
+- Modify `.env` you can find both tutorials on how to find your MongoDB connection URL [here](https://github.com/Fatih5252/new-games-bot-discord-bot/blob/main/README.md#how-to-get-your-mongodb-atlas-connection-url) and how to find your discord bot token [here](https://github.com/Fatih5252/new-games-bot-discord-bot/blob/main/README.md#discord)<br>
+- change `src/functions/handelCommands.js` line 6 Discord client id<br>
+- change `src/commands/other/deleteschema.js` line 24 owner/bot developer id's<br>
+- change `src/commands/moderation/blacklist.js` line 24 owner bot developer id's<br>
+- change `src/commands/moderation/verify.js` line 14 owner/bot developer id's<br>
+- change `src/index.js` line 137 Private discord server id<br>
+- change `src/events/bugreport.js` line 17 change discord category id<br>
+- change `src/webhook-server.js` line 7 channel id<br>
+- If you want an github webhook server. than there is an code on `src/webhook-server.js`. but if you don't use github or using discord webhooks then delete `src/webhook-server.js` and on `src/index.js` delete line 5 and line 14-16.<br>
+- (optional) Delete `rpc.js`<br>
 
 ## IF YOU DONT DO THIS, YOUR BOT WILL NOT WORK.<br>
 <br>
