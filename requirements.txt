@@ -11,3 +11,5 @@ captcha-canvas
 @discordjs/rest
 uuid
 discord-rpc
+body-parser
+express
