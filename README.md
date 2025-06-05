@@ -1,7 +1,7 @@
-# new-games-bot-discord-bot
+# [new-games-bot-discord-bot](https://discord.com/oauth2/authorize?client_id=1217541066434154627)
 This is the new Open source code for the Games Bot.<br>
 The `https://github.com/fatih5252/games-bot-discord-bot` one is outdateted because of that, this is the new repository.<br>
-[here you can invite the bot](https://discord.com/oauth2/authorize?client_id=1217541066434154627)<br>
+# [here you can invite the bot](https://discord.com/oauth2/authorize?client_id=1217541066434154627)<br>
 <br>
 
 # Building<br>
