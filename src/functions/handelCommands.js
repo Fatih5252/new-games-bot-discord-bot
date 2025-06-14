@@ -1,5 +1,5 @@
 const { REST } = require("@discordjs/rest");
-const { Routes } = require('discord-api-types/v9');
+const { Routes } = require('discord-api-types/v10');
 const { SlashCommandBuilder } = require("discord.js");
 const fs = require('fs');
 
@@ -23,7 +23,7 @@ module.exports = (client) => {
         }
 
         const rest = new REST({
-            version: '9'
+            version: '10'
         }).setToken(process.env.token);
 
         (async () => {
