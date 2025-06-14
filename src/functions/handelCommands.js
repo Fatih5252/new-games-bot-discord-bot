@@ -3,7 +3,7 @@ const { Routes } = require('discord-api-types/v9');
 const { SlashCommandBuilder } = require("discord.js");
 const fs = require('fs');
 
-const clientId = '1217541066434154627';  
+const clientId = 'discord bot id';  
 
 module.exports = (client) => {
     client.handleCommands = async (commandFolders, path) => {

@@ -1,21 +1,24 @@
 # new-games-bot-discord-bot
 This is the new Open source code for the Games Bot.<br>
 The `https://github.com/fatih5252/games-bot-discord-bot` one is outdateted because of that, this is the new repository.<br>
-[here you can invite the bot](https://discord.com/oauth2/authorize?client_id=1217541066434154627)<br>
+# [here you can invite the bot](https://discord.com/oauth2/authorize?client_id=1217541066434154627)<br>
+<br>
 
 # Building<br>
-Use the command npm i to install all of the packages (or install them manually).
+Use the command npm i to install all of the packages (or install them manually).<br>
+<br>
 
 # THINGS YOU HAVE TO DO<br>
-change `src/functions/handelCommands.js` line 6 Discord client id<br>
-change `src/commands/other/deleteschema.js` line 24 owner/bot developer id's<br>
-change `src/commands/moderation/blacklist.js` line 24 owner bot developer id's<br>
-change `src/commands/moderation/verify.js` line 14 owner/bot developer id's<br>
-change `src/index.js` line 137 Private discord server id<br>
-change `src/events/bugreport.js` line 17 change discord category id<br>
-change `src/webhook-server.js` line 7 channel id<br>
-If you want an github webhook server than there is an code on `src/webhook-server.js` but if you don't have to do with github or using discord webhooks then delete `src/webhook-server.js` and on `src/index.js` delete line 5 and line 14-16.<br>
-(optional) Delete `rpc.js`<br>
+- Modify `.env` you can find both tutorials on how to find your MongoDB connection URL [here](https://github.com/Fatih5252/new-games-bot-discord-bot/blob/main/README.md#how-to-get-your-mongodb-atlas-connection-url) and how to find your discord bot token [here](https://github.com/Fatih5252/new-games-bot-discord-bot/blob/main/README.md#discord)<br>
+- change `src/functions/handelCommands.js` line 6 Discord client id<br>
+- change `src/commands/other/deleteschema.js` line 24 owner/bot developer id's<br>
+- change `src/commands/moderation/blacklist.js` line 24 owner bot developer id's<br>
+- change `src/commands/moderation/verify.js` line 14 owner/bot developer id's<br>
+- change `src/index.js` line 137 Private discord server id<br>
+- change `src/events/bugreport.js` line 17 change discord category id<br>
+- change `src/webhook-server.js` line 7 channel id<br>
+- If you want an github webhook server. than there is an code on `src/webhook-server.js`. but if you don't use github or using discord webhooks then delete `src/webhook-server.js` and on `src/index.js` delete line 5 and line 14-16.<br>
+- (optional) Delete `rpc.js`<br>
 
 ## IF YOU DONT DO THIS, YOUR BOT WILL NOT WORK.<br>
 <br>
@@ -29,13 +32,13 @@ First, you need to visit the MongoDB Atlas website at [https://cloud.mongodb.com
 
 After your cluster is ready, the next step is to set up database access. You need to create a **database user** with a username and password. This can be done by going to the **“Database Access”** section in the left-hand menu. There, you click on **“Add New Database User”** and choose a username and password. These credentials will later be used in the connection string. You can also assign access levels, such as read and write access to any database.
 
-Then, you need to allow your device to access the database. MongoDB Atlas restricts access to trusted IP addresses for security. Go to the **“Network Access”** section and click on **“Add IP Address.”** If you're just testing, you can allow access from anywhere by entering `0.0.0.0/0`, although this is not recommended for production environments.
+Then, you need to allow your device to access the database. MongoDB Atlas restricts access to trusted IP addresses for security. Go to the **“Network Access”** section and click on **“Add IP Address.”** If you're just testing, you can allow access from anywhere by entering `0.0.0.0/0`, although this is not recommended for production environments you have to do this step.
 
 Once you have a user and network access set up, go back to your cluster and click the **“Connect”** button. Atlas will ask how you want to connect; choose **“Connect your application.”** Then, select your driver (for example, Node.js) and version. After that, Atlas will show you a pre-generated connection string. It will look something like this: `mongodb+srv://<username>:<password>@cluster0.mongodb.net/<database-name>?retryWrites=true&w=majority` 
 You must replace the placeholders with your own information. For example, if your username is `admin`, your password is `MyPassword123`, and your database name is `myapp`, then the final connection string would look like: `mongodb+srv://admin:MyPassword123@cluster0.mongodb.net/myapp?retryWrites=true&w=majority` 
 It is important to note that if your password includes special characters (like `@`, `/`, or `:`), you will need to **URL-encode** them. For instance, the `@` symbol becomes `%40`.
 
-Now that you have your connection URL, you can use it in your application. In many cases, especially in web development, developers use this string with a MongoDB library like **Mongoose** (in Node.js). You can also store this URL in an environment variable to keep your credentials safe and your code clean.
+Now that you have your connection URL, you can use it in your application. In many cases, especially in web development, developers use this string with a MongoDB library like **Mongoose** (in Node.js). You can also store this URL in an environment variable to keep your credentials safe and your code clean (for this Project, store your MongoDB URL connection in the `.env` file).
 
 In summary, getting the MongoDB Atlas connection URL involves creating a cluster, setting up a user and IP access, and copying a customized connection string. This string is then used by your application to communicate securely with your MongoDB database hosted in the cloud.
 

@@ -1,4 +1,5 @@
-// webhook-server.js
+// READ THIS DOWN BELOW
+// webhook-server.js is used to work with github webhook stuff. if you dont use github (or if you use an discord webhook to send github messages) or dosn't care about this feature. read the README.md (section THING YOU HAVE TO DO) on how to get rid of this feature
 const express = require('express');
 const bodyParser = require('body-parser');
 const { EmbedBuilder } = require('discord.js');
@@ -37,7 +38,7 @@ function startWebhookServer(bot) {
   });
 
   app.listen(PORT, () => {
-    console.log(`✅ Webhook-Server läuft auf Port ${PORT}`);
+    console.log(`✅ Webhook-Server works on port ${PORT}`);
   });
 }
 
